@@ -8,25 +8,27 @@ const projects = [
     description: "Aplicación web para planificar y registrar entrenamientos de natación.",
     tags: ["HTML", "CSS", "JavaScript", "LocalStorage"],
     demo: "https://tortoriello-ignacio.github.io/Proyecto_natacion/",
-    github: "#"
+    github: "#",
   },
   {
     title: "Portfolio Personal",
-    description: "Portfolio web responsive con sidebar, secciones navegables y proyectos dinámicos.",
+    description: "Portfolio web responsive con navegación superior, secciones tipo CV y proyectos dinámicos.",
     tags: ["HTML", "CSS", "JavaScript"],
     demo: "#",
-    github: "#"
+    github: "#",
   },
   {
     title: "Gestor de tareas",
     description: "Aplicación tipo kanban para organizar tareas, estados y prioridades.",
     tags: ["JavaScript", "DOM", "CRUD"],
     demo: "#",
-    github: "#"
-  }
+    github: "#",
+  },
 ];
 
 function renderProjects() {
+  if (!projectsGrid) return;
+
   projectsGrid.innerHTML = "";
 
   projects.forEach((project) => {
@@ -39,12 +41,12 @@ function renderProjects() {
       <p>${project.description}</p>
 
       <div class="project-tags">
-        ${project.tags.map(tag => `<span>${tag}</span>`).join("")}
+        ${project.tags.map((tag) => `<span>${tag}</span>`).join("")}
       </div>
 
       <div class="project-links">
-        <a href="${project.demo}" target="_blank">Demo</a>
-        <a href="${project.github}" target="_blank">Código</a>
+        <a href="${project.demo}" target="_blank" rel="noopener noreferrer">Demo</a>
+        <a href="${project.github}" target="_blank" rel="noopener noreferrer">Código</a>
       </div>
     `;
 
@@ -53,27 +55,28 @@ function renderProjects() {
 }
 
 function setActiveLink() {
-  let currentSection = "";
+  let currentSectionId = "inicio";
+  const scrollPosition = window.scrollY + 180;
 
   sections.forEach((section) => {
-    const sectionTop = section.offsetTop - 160;
-
-    if (window.scrollY >= sectionTop) {
-      currentSection = section.getAttribute("id");
+    if (scrollPosition >= section.offsetTop) {
+      currentSectionId = section.getAttribute("id");
     }
   });
 
   navLinks.forEach((link) => {
     link.classList.remove("active");
 
-    if (link.getAttribute("href") === `#${currentSection}`) {
+    const href = link.getAttribute("href");
+
+    if (href === `#${currentSectionId}`) {
       link.classList.add("active");
     }
   });
 }
 
-
 window.addEventListener("scroll", setActiveLink);
+window.addEventListener("load", setActiveLink);
 
 renderProjects();
 setActiveLink();
