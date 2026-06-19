@@ -499,6 +499,12 @@ body {
     width: 180px;
     height: 230px;
   }
+  
+  .habilidades-grid div:hover {
+    border-color: #00adb5;
+    color: #00adb5;
+    transition: all 0.3s ease;
+}
 
   .skills-grid {
     grid-template-columns: 1fr;
