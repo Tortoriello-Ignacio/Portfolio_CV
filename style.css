@@ -510,3 +510,21 @@ body {
     grid-template-columns: 1fr;
   }
 }
+.btn-contact {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px; /* Espacio entre el icono y el texto */
+    padding: 10px 20px;
+    border: 1px solid #333; /* Borde sutil inicial */
+    background-color: transparent;
+    color: #ccc;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.btn-contact:hover {
+    border-color: #fff; 
+    color: #fff;
+    background-color: rgba(255, 255, 255, 0.05); 
+}
