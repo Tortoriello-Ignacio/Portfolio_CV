@@ -5,21 +5,21 @@ const projectsGrid = document.getElementById("projectsGrid");
 const projects = [
   {
     title: "Swim Tracker",
-    description: "Aplicación web para planificar y registrar entrenamientos de natación.",
+    description: "Web application designed to plan and log swimming training sessions.",
     tags: ["HTML", "CSS", "JavaScript", "LocalStorage"],
     demo: "https://tortoriello-ignacio.github.io/Proyecto_natacion/",
     github: "#",
   },
   {
-    title: "Portfolio Personal",
-    description: "Portfolio web responsive con navegación superior, secciones tipo CV y proyectos dinámicos.",
+    title: "Personal Portfolio",
+    description: "Responsive web portfolio featuring top navigation, CV-style sections, and dynamic project displays.",
     tags: ["HTML", "CSS", "JavaScript"],
     demo: "#",
     github: "#",
   },
   {
-    title: "Gestor de tareas",
-    description: "Aplicación tipo kanban para organizar tareas, estados y prioridades.",
+    title: "Task Manager",
+    description: "Kanban-style application built to organize tasks, track statuses, and manage priorities.",
     tags: ["JavaScript", "DOM", "CRUD"],
     demo: "#",
     github: "#",
